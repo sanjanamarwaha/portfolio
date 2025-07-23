@@ -1,0 +1,14 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 1.2rem;
+}
+
+h2 {
+    margin-top: 2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+}
