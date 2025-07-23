@@ -1,105 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sanjana Sanjana | Software Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjana's Portfolio</title>
+  <style>
+    :root {
+      --bg: #f8f9fa;
+      --text: #212529;
+      --accent: #0d6efd;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 3rem;
+      color: var(--accent);
+    }
+    .role {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: #555;
+    }
+    .links {
+      margin-top: 1.5rem;
+    }
+    .links a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    section {
+      padding: 4rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    #about img {
+      float: left;
+      margin-right: 1.5rem;
+      margin-top: 3rem;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      margin-top: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      margin-bottom: 0.5rem;
+    }
+    .card ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+    footer {
+      text-align: center;
+      background-color: white;
+      padding: 2rem 1rem;
+      border-top: 1px solid #ccc;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Hero Section -->
-    <div>
-        <header class="bg-primary text-white text-center py-5">
-            <div class="container">
-                <h1>Sanjana Sanjana</h1>
-                <p class="lead">Software Developer</p>
-                <p>
-                    📧 <a class="text-white" href="mailto:sanjanamarwaha.sm29@gmail.com">sanjanamarwaha.sm29@gmail.com</a> |
-                    📞 (+1) 778-682-3247 |
-                    🔗 <a class="text-white" href="https://www.linkedin.com/in/sanjana-marwaha/" target="_blank">LinkedIn</a> |
-                    📍 Coquitlam, BC, Canada
-                </p>
-            </div>
-        </header>
+  <header class="hero">
+    <h1>Sanjana</h1>
+    <p class="role">Software Engineer</p>
+    <div class="links">
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
     </div>
+  </header>
 
-    <!-- About -->
-    <section class="container py-5">
-        <h2>About Me</h2>
-        <div>
-            <p>
-                Hardworking and detail-oriented Software Engineer with a strong passion for backend development using Java, JavaScript, and MySQL.
-                Experienced in building secure, scalable systems, optimizing data workflows, and embedding security in the SDLC.
-                Adept at code enhancement, version control, and thriving in Agile teams.
-            </p>
-        </div>
-    </section>
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="https://via.placeholder.com/150" alt="Your Photo" />
+    <p>Hey! I’m Sanjana — a software engineer by day, debugger by night, and lifelong learner in between. I believe in writing code that not only works but also doesn’t make future-me cry. If it involves building, breaking, or boldly Googling error messages at 2 AM, I’m in. Welcome to my code playground — no training wheels, just real builds and plenty of fun. Feel free to explore every corner!</p>
+  </section>
 
-    <!-- Skills -->
-    <section class="container py-4">
-        <h2>Technical Skills</h2>
-        <ul class="row">
-            <li class="col-md-4"><strong>Languages:</strong> Java, JavaScript, TypeScript, C#, Python, C++, HTML, CSS</li>
-            <li class="col-md-4"><strong>Frameworks:</strong> React, Vue.js, Node.js, Pinia, Vite</li>
-            <li class="col-md-4"><strong>Databases:</strong> MySQL, SQL Server, MongoDB, Oracle</li>
-            <li class="col-md-4"><strong>Cloud & DevOps:</strong> Microsoft Azure, Azure DevOps, GitHub</li>
-            <li class="col-md-4"><strong>Testing:</strong> JMeter, LoadRunner, Splunk, Grafana</li>
-            <li class="col-md-4"><strong>Tools:</strong> Swagger, Apache Kafka</li>
-        </ul>
-    </section>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
+      <p><b>Master of Science: </b> University of Alberta, Edmonton.</p>
+      <p><em>September, 2023 - June, 2025</em></p>
+      <p><b>Graduate Coursework: </b>Virtual Reality telepresence, AI in multimedia, Introduction to machine learning, Internet of things, graphics and animation</p>
+    </div>
+    <div class="card">
+      <p><b>Bachelors of Technology: </b> Guru Nanak Dev University, Amritsar.</p>
+      <p><em>July, 2017  - August, 2021</em></p>
+      <p><b>Undergraduate Coursework: </b>Data Structures and Algorithms, Relational Database Management System, Software Engineering and Testing, Operating Systems, Web programming, Internet of things, Computer Architecture, System Analysis and Design, Machine Learning, Cloud Computing. </p>
+    </div>
+  </section>
 
-    <!-- Education -->
-    <section class="container py-4">
-        <h2>Education</h2>
-        <ul>
-            <li><strong>MSc, Computer Science and Multimedia</strong> — University of Alberta, Sept 2023 – June 2025 (GPA: 3.7)</li>
-            <li><strong>B.Tech, Computer Science</strong> — Guru Nanak Dev University, July 2017 – July 2021 (GPA: 3.5)</li>
-        </ul>
-    </section>
 
-    <!-- Experience -->
-    <section class="container py-4">
-        <h2>Experience</h2>
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Software Developer Intern – <em>Accountium, Vancouver, Canada</em></h3>
+      <p><em>September, 2024 - December, 2024</em></p>
+      <ul>
+        <!-- <li>Developed modern web applications using React and Node.js</li>
+        <li>Collaborated with cross-functional teams in Agile environment</li> -->
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Software Developer Intern – <em>Arts Resource Center, Edmonton, Canada</em></h3>
+      <p><em>May, 2024 - August, 2024</em></p>
+      <ul>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>System Engineer – <em>Tata Consultancy Services (TCS), Bangalore, India</em></h3>
+      <p><em>July, 2021 - June, 2023</em></p>
+      <ul>
+        
+      </ul>
+    </div>
+  </section>
 
-        <div class="mb-4">
-            <h5>Software Developer Intern — Accountium, Canada</h5>
-            <p><em>Sep 2024 – Dec 2024</em></p>
-            <ul>
-                <li>Developed backend modules using JavaScript, C#, SQL Server improving data processing by 30%.</li>
-                <li>Optimized queries, reduced server load, and improved mobile performance.</li>
-                <li>Led UI/UX testing, achieved 98% unit test coverage and 3 zero-bug releases.</li>
-            </ul>
-        </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>A modern personal portfolio built with HTML, CSS, and JavaScript. <a href="#">View on GitHub</a></p>
+    </div>
+  </section>
 
-        <div class="mb-4">
-            <h5>Software Developer Intern — Arts Resource Center, Univ. of Alberta</h5>
-            <p><em>May 2024 – Aug 2024</em></p>
-            <ul>
-                <li>Built and launched web apps using TypeScript and Vue.js.</li>
-                <li>Created an npm package and standardized UI components.</li>
-                <li>Integrated BEM/SMACSS CSS patterns for maintainability.</li>
-            </ul>
-        </div>
+  <section id="special note">
+    <h2>Special note</h2>
+    <div class="card">
+      
+    </div>
+  </section>
 
-        <div>
-            <h5>System Engineer — Tata Consultancy Services, India</h5>
-            <p><em>July 2021 – June 2023</em></p>
-            <ul>
-                <li>Migrated legacy systems to web architecture (25% adoption increase).</li>
-                <li>Automated backend testing with JMeter & LoadRunner.</li>
-                <li>Mentored junior engineers and led code reviews with GitHub & JIRA.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="text-center py-4 bg-dark text-white">
-        <p>&copy; 2025 Sanjana Marwaha. All rights reserved.</p>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <footer id="contact">
+    <p><a href="mailto:sanjanamarwaha.sm29@gmail.com">sanjanamarwaha.sm29@gmail.com</a> | 
+      <a href="https://github.com/sanjanamarwaha">GitHub</a> |
+      <a href="https://linkedin.com/in/sanjana-marwaha">LinkedIn</a> | Coquitlam, British Columbia, CA
+    </p>
+  </footer>
 </body>
 </html>

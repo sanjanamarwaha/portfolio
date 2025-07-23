@@ -1,0 +1,6 @@
+1. I need to add projects tomorrow with description.
+2. I need to add 4 bullet points for each experience.
+3. add images in contact section.
+4. change the layout of the site from blue to something else.
+5. insert my image and company images.
+6. deploy the site
