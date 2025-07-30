@@ -92,8 +92,12 @@ body::before {
 }
 
 .sidebar-bottom {
-  text-align: center;
+  margin-top: auto;   /* push it to bottom */
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .sidebar-footer {
@@ -469,6 +473,7 @@ body::before {
   border-radius: 12px;
 }
 
+
 #about.active,
 #specialnote.active {
  height: 85vh;           /* Fix the height to viewport */
@@ -483,5 +488,3 @@ body::before {
 #specialnote {
   display: none; /* hide by default */
 }
-
-
