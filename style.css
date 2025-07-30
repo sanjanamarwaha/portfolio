@@ -4,12 +4,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
   background: #111;
-  overflow: hidden;
+  overflow-x: hidden;   
   position: relative;
 }
 
@@ -20,7 +19,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/portfolio/assets/background.jpg') no-repeat center center fixed;
+  background: url('../assets/background.jpg') no-repeat center center fixed;
   background-size: cover;
   z-index: -1;
 }
@@ -67,12 +66,12 @@ body::before {
 }
 
 .sidebar-socials {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
   display: flex;
-  gap: 0.1rem;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
+
 
 .sidebar-socials a {
   color: #ccc;
@@ -85,18 +84,38 @@ body::before {
   color: #fff;
 }
 
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.sidebar-bottom {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.sidebar-footer {
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-top: 0.3rem;
+}
+
+
 /* ===== Main Container ===== */
 .main-container {
   margin-left: 240px;
-  min-height: 100vh;
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   perspective: 1200px;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
 }
+
 
 .grid-3d-wrapper {
   transition: transform 0.8s ease;
@@ -167,6 +186,7 @@ body::before {
 }
 
 
+
 .flip-back {
   transform: rotateY(180deg);
   overflow-y: auto;
@@ -177,7 +197,6 @@ body::before {
 
 
 /* Fullscreen cards (About, Skills, etc.) */
-#about .flip-card,
 #skills .flip-card,
 #specialnote .flip-card {
   width: calc(100vw - 30px);
@@ -399,3 +418,70 @@ body::before {
 #specialnote .flip-back {
   display: none;
 }
+
+/* ==== Fix image overflow inside About card at higher zoom levels ==== */
+/* === Custom Flip Card Size for About and Special Note === */
+#about .flip-card,
+#specialnote .flip-card {
+  width: 800px;
+  height: 400px;
+}
+
+/* Ensure inner flip behaves normally */
+#about .flip-inner,
+#specialnote .flip-inner {
+  height: 100%;
+}
+
+
+/* Default: row layout for wider screens */
+#about .flip-front {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  gap: 2rem;
+}
+
+/* Responsive fix: switch to column on smaller screens or high zoom */
+@media (max-width: 1024px) {
+  #about .flip-front {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+  }
+
+  #about .about-image img {
+    max-height: 280px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+
+#about .about-image img {
+  max-width: 100%;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+#about.active,
+#specialnote.active {
+ height: 85vh;           /* Fix the height to viewport */
+  overflow-y: auto;        /* Allow scrolling if content overflows */
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about,
+#specialnote {
+  display: none; /* hide by default */
+}
+
+
