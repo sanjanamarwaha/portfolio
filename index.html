@@ -13,36 +13,36 @@
 
 <body>
   <!-- Sidebar -->
- <aside class="sidebar">
-  <nav>
-    <ul>
-      <li><a href="#about" class="nav-link active">About</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#experience" class="nav-link">Experience</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#specialnote" class="nav-link">Resume</a></li>
-    </ul>
+  <aside class="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#about" class="nav-link active">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#specialnote" class="nav-link">Resume</a></li>
+      </ul>
 
-    <!-- Bottom section with socials and copyright -->
-    <div class="sidebar-bottom">
-      <div class="sidebar-socials">
-        <a href="https://github.com/sanjanamarwaha" target="_blank">
+      <!-- Bottom section with socials and copyright -->
+      <div class="sidebar-bottom">
+        <div class="sidebar-socials">
+          <a href="https://github.com/sanjanamarwaha" target="_blank">
 
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="mailto:sanjanamarwaha.sm29@gmail.com" target="_blank">
-          <i class="fa-regular fa-envelope"></i>
-        </a>
-        <a href="https://linkedin.com/in/sanjana-marwaha" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="mailto:sanjanamarwaha.sm29@gmail.com" target="_blank">
+            <i class="fa-regular fa-envelope"></i>
+          </a>
+          <a href="https://linkedin.com/in/sanjana-marwaha" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+        <div class="sidebar-footer">
+          &copy; 2025 All rights reserved.
+        </div>
       </div>
-      <div class="sidebar-footer">
-        &copy; 2025 All rights reserved.
-      </div>
-    </div>
-  </nav>
-</aside>
+    </nav>
+  </aside>
 
 
 
@@ -380,94 +380,73 @@
     </div>
   </main>
 
-  <!-- Footer -->
-  <!-- <footer class="footer" id="contact">
-    <p>
-      📧 <a href="mailto:sanjanamarwaha.sm29@gmail.com">sanjanamarwaha.sm29@gmail.com</a> |
-      <a href="https://github.com/sanjanamarwaha" target="_blank" rel="noopener noreferrer">GitHub</a> |
-      <a href="https://linkedin.com/in/sanjana-marwaha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    </p>
-  </footer> -->
-
-  <!-- <div class="sidebar-footer">
-  <a href="mailto:youremail@example.com" target="_blank" title="Email">
-    <img src="assets/email-icon.png" alt="Email" />
-  </a>
-  <a href="https://github.com/yourusername" target="_blank" title="GitHub">
-    <img src="assets/github-icon.png" alt="GitHub" />
-  </a>
-  <a href="https://linkedin.com/in/yourusername" target="_blank" title="LinkedIn">
-    <img src="assets/linkedin-icon.png" alt="LinkedIn" />
-  </a>
-</div> -->
-
 
 
 
   <script>
-   document.addEventListener('DOMContentLoaded', () => {
-  // === Card Flip Logic ===
-  document.querySelectorAll('.flip-card').forEach(card => {
-    card.addEventListener('click', () => {
-      card.classList.toggle('flipped');
-    });
-  });
+    document.addEventListener('DOMContentLoaded', () => {
+      // === Card Flip Logic ===
+      document.querySelectorAll('.flip-card').forEach(card => {
+        card.addEventListener('click', () => {
+          card.classList.toggle('flipped');
+        });
+      });
 
-  // === Navigation Section Switching ===
-  const navLinks = document.querySelectorAll('.sidebar a');
-  const cardSections = document.querySelectorAll('.card-section');
+      // === Navigation Section Switching ===
+      const navLinks = document.querySelectorAll('.sidebar a');
+      const cardSections = document.querySelectorAll('.card-section');
 
-  navLinks.forEach(link => {
-  link.addEventListener('click', e => {
-    const href = link.getAttribute('href');
+      navLinks.forEach(link => {
+        link.addEventListener('click', e => {
+          const href = link.getAttribute('href');
 
-    // Only prevent default if it's an internal section link (starts with #)
-    if (href && href.startsWith('#')) {
-      e.preventDefault();
+          // Only prevent default if it's an internal section link (starts with #)
+          if (href && href.startsWith('#')) {
+            e.preventDefault();
 
-      const sectionId = href.substring(1);
-      const activeSection = document.getElementById(sectionId);
+            const sectionId = href.substring(1);
+            const activeSection = document.getElementById(sectionId);
 
-      if (activeSection) {
-        cardSections.forEach(section => section.classList.remove('active'));
-        activeSection.classList.add('active');
+            if (activeSection) {
+              cardSections.forEach(section => section.classList.remove('active'));
+              activeSection.classList.add('active');
 
-        navLinks.forEach(nav => nav.classList.remove('active'));
-        link.classList.add('active');
+              navLinks.forEach(nav => nav.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+          // mailto and external links will open normally
+        });
+      });
+
+
+      // === Project Carousel Scroll Logic ===
+      const wrapper = document.querySelector('.projects-wrapper');
+      const leftBtn = document.querySelector('.left-arrow');
+      const rightBtn = document.querySelector('.right-arrow');
+
+      const cardWidth = 370; // width + margin
+      const scrollStep = cardWidth * 3; // Scroll 3 cards at a time
+
+      function updateArrows() {
+        const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
+        leftBtn.style.visibility = wrapper.scrollLeft <= 0 ? 'hidden' : 'visible';
+        rightBtn.style.visibility = wrapper.scrollLeft >= maxScrollLeft ? 'hidden' : 'visible';
       }
-    }
-    // mailto and external links will open normally
-  });
-});
 
+      leftBtn?.addEventListener('click', () => {
+        wrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+        setTimeout(updateArrows, 400);
+      });
 
-  // === Project Carousel Scroll Logic ===
-  const wrapper = document.querySelector('.projects-wrapper');
-  const leftBtn = document.querySelector('.left-arrow');
-  const rightBtn = document.querySelector('.right-arrow');
+      rightBtn?.addEventListener('click', () => {
+        wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
+        setTimeout(updateArrows, 400);
+      });
 
-  const cardWidth = 370; // width + margin
-  const scrollStep = cardWidth * 3; // Scroll 3 cards at a time
-
-  function updateArrows() {
-    const maxScrollLeft = wrapper.scrollWidth - wrapper.clientWidth;
-    leftBtn.style.visibility = wrapper.scrollLeft <= 0 ? 'hidden' : 'visible';
-    rightBtn.style.visibility = wrapper.scrollLeft >= maxScrollLeft ? 'hidden' : 'visible';
-  }
-
-  leftBtn?.addEventListener('click', () => {
-    wrapper.scrollBy({ left: -scrollStep, behavior: 'smooth' });
-    setTimeout(updateArrows, 400);
-  });
-
-  rightBtn?.addEventListener('click', () => {
-    wrapper.scrollBy({ left: scrollStep, behavior: 'smooth' });
-    setTimeout(updateArrows, 400);
-  });
-
-  // Initialize arrow visibility
-  updateArrows();
-});
+      // Initialize arrow visibility
+      updateArrows();
+    });
 
   </script>
 
