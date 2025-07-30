@@ -1,6 +1,7 @@
-1. I need to add projects tomorrow with description.
-2. I need to add 4 bullet points for each experience.
-3. add images in contact section.
-4. change the layout of the site from blue to something else.
-5. insert my image and company images.
-6. deploy the site
+1. change the layout of the site from blue to something else.
+2. make 2 cards appear together
+3. change the layout of the image
+4. add special note
+5. add copyright
+6. add all image in contact
+7. content display properly
